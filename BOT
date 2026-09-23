@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#102f4a">
+<title>Munshi's Inspire Space</title>
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+:root{--navy:#102f4a;--blue:#315b9b;--text:#17324d;--muted:#68798c}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--text);background:linear-gradient(180deg,#f4f8fc,#edf5fa 55%,#fff)}
+button{font:inherit;cursor:pointer}
+.top{position:sticky;top:0;z-index:50;background:#ffffffed;backdrop-filter:blur(12px);border-bottom:1px solid #dfe8f0}
+.nav{max-width:1150px;margin:auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:10px}.logo{width:45px;height:45px;border-radius:14px;background:linear-gradient(135deg,#102f4a,#4b7bc1);display:grid;place-items:center;color:#fff;font-size:22px}.brand b{display:block}.brand small{color:#75869a;font-size:11px}
+.navlinks{display:flex;gap:3px}.navlinks button{border:0;background:none;color:#53687c;padding:9px 10px;border-radius:11px;font-size:13px}.navlinks button:hover{background:#edf4ff;color:#315b9b}
+.chat-nav{border:0;background:#102f4a;color:#fff;border-radius:12px;padding:10px 13px;font-weight:bold}
+.hero{max-width:1150px;margin:20px auto 0;padding:0 20px}.hero-box{position:relative;min-height:390px;border-radius:30px;overflow:hidden;background:linear-gradient(120deg,#fff0f4,#eef6ff 48%,#e7f7ef);box-shadow:0 14px 40px #193d5b16}
+.hero-content{position:relative;z-index:3;width:58%;padding:52px 45px}.kicker{font-size:12px;letter-spacing:1.2px;color:#5779a5;font-weight:bold}.hero h1{font-family:"Trebuchet MS",Arial,sans-serif;font-style:italic;font-size:53px;line-height:.98;margin:12px 0;color:#183650}.hero h2{font-size:20px;margin:0 0 12px}.hero p{color:#587087;line-height:1.6}.primary{border:0;background:linear-gradient(135deg,#315b9b,#4c7dcc);color:#fff;padding:12px 20px;border-radius:25px;font-weight:bold;box-shadow:0 7px 16px #315b9b35}
+.art{position:absolute;right:0;bottom:0;width:52%;height:100%;opacity:.9}.sun{position:absolute;width:220px;height:220px;border-radius:50%;background:#ffe9b9;right:70px;top:35px}.school{position:absolute;right:10px;bottom:0;width:82%;height:57%;background:linear-gradient(#b9cfe0 0 12%,#f4e7d1 12%);clip-path:polygon(5% 24%,50% 0,95% 24%,95% 100%,5% 100%)}.school:after{content:"SMK MUNSHI SULAIMAN";position:absolute;top:29%;left:28%;width:44%;padding:9px 4px;background:#315b9b;color:#fff;text-align:center;font-size:10px;font-weight:bold}.person{position:absolute;right:28%;bottom:0;width:140px;height:230px;background:#29425f;border-radius:65px 65px 16px 16px}.person:before{content:"";position:absolute;width:83px;height:83px;border-radius:50%;background:#d4a17e;left:29px;top:-38px}
+.main{max-width:1150px;margin:auto;padding:0 20px 45px}.needs{background:#fff;border-radius:25px;padding:23px;margin-top:-28px;position:relative;z-index:5;box-shadow:0 12px 35px #1b405e17}.title{text-align:center;font-size:24px;margin:0 0 15px}.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.need{border:0;border-radius:18px;padding:18px;text-align:left;min-height:165px;display:flex;flex-direction:column;justify-content:space-between;transition:.2s}.need:hover{transform:translateY(-4px);box-shadow:0 10px 22px #1a3d5818}.need .emoji{font-size:32px}.need h3{font-size:16px;margin:9px 0 4px}.need small{color:#63788b}.pink{background:#ffeaf1}.green{background:#e3f7ec}.purple{background:#eeeaff}.yellow{background:#fff1d8}.arrow{align-self:flex-end;width:32px;height:32px;border-radius:50%;background:#315b9b;color:#fff;display:grid;place-items:center}
+.tools{display:grid;grid-template-columns:repeat(5,1fr);gap:11px;margin:23px 0}.tool{border:1px solid #e2eaf1;background:#fff;border-radius:18px;padding:17px 9px;text-align:center;box-shadow:0 5px 16px #21435b0c}.tool .i{font-size:31px}.tool b{display:block;margin-top:8px;font-size:14px}.tool span{font-size:11px;color:#73859a}
+.tip{display:grid;grid-template-columns:1.4fr .8fr;gap:13px;margin:18px 0 27px}.tip>div{border-radius:21px;padding:23px;min-height:145px;box-shadow:0 10px 28px #20435b12}.tip1{background:linear-gradient(135deg,#fff6df,#fff)}.tip2{background:linear-gradient(135deg,#e5f7ed,#fafffc)}.tip h2{font-size:20px;margin:0 0 10px}.tip p{font-size:17px;line-height:1.55;margin:0}.section{font-size:22px}.highlights{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 8px 25px #20435b10;border:1px solid #e5edf3}.card .pic{height:100px;display:grid;place-items:center;font-size:44px;background:linear-gradient(135deg,#fcecf3,#edf5ff)}.card .body{padding:14px}.card small{display:block;color:#73859a;margin:5px 0 10px;line-height:1.4}.link{border:0;background:none;color:#315b9b;font-weight:bold;padding:0}
+footer{background:#102f4a;color:#fff;padding:27px 20px}.foot{max-width:1150px;margin:auto;display:flex;justify-content:space-between;gap:20px}.foot small{color:#d4dfeb}
+
+.modal{display:none;position:fixed;inset:0;z-index:100;background:#102f4a78;backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:15px}.modal-box{background:#fff;width:100%;max-width:650px;max-height:90vh;overflow:auto;border-radius:24px;padding:25px;box-shadow:0 20px 60px #102f4a40}.mh{display:flex;justify-content:space-between;align-items:center}.mh h2{margin:0}.close{border:0;background:#eef2f5;border-radius:50%;width:38px;height:38px;font-size:22px}
+.moods{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin:18px 0}.mood{border:1px solid #d9e3ea;background:#f9fbfd;border-radius:17px;padding:15px}.mood span{display:block;font-size:31px;margin-bottom:6px}.result{display:none;background:#eef6f2;border-radius:17px;padding:16px;line-height:1.6}
+.items{display:grid;gap:11px;margin-top:16px}.item{border:1px solid #e0e7ed;border-radius:17px;padding:16px;background:#fafcfd}.item h3{margin:0 0 6px;font-size:16px}.item p{margin:0 0 10px;color:#587087;line-height:1.5}.sub{display:none;background:#eef5f8;border-radius:15px;padding:15px;margin-top:10px;line-height:1.6}.circle{width:110px;height:110px;border-radius:50%;background:#dfeef0;margin:10px auto;display:grid;place-items:center;text-align:center;font-weight:bold}
+.chat-launch{position:fixed;right:22px;bottom:22px;z-index:90;width:62px;height:62px;border:0;border-radius:50%;background:linear-gradient(135deg,#102f4a,#315b9b);color:#fff;font-size:28px;box-shadow:0 8px 25px #102f4a45}
+.chat{display:none;position:fixed;right:20px;bottom:95px;width:430px;height:590px;max-width:calc(100vw - 30px);z-index:91;background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 18px 55px #102f4a45;flex-direction:column}.chathead{background:linear-gradient(135deg,#102f4a,#315b9b);color:#fff;padding:17px;display:flex;justify-content:space-between}.chathead button{border:0;background:none;color:#fff;font-size:24px}.messages{flex:1;overflow:auto;padding:15px;background:#f4f7fb}.bot,.user{max-width:85%;padding:11px 14px;border-radius:16px;margin-bottom:10px;line-height:1.5;font-size:14px}.bot{background:#fff}.user{background:#173b5b;color:#fff;margin-left:auto}.quick{padding:8px;background:#fff;border-top:1px solid #edf0f3;max-height:140px;overflow:auto}.quick button{border:1px solid #d6e0e8;background:#fff;border-radius:20px;padding:7px 9px;margin:3px;font-size:11px}.input{display:flex;padding:10px;background:#fff;border-top:1px solid #eee}.input input{flex:1;border:1px solid #d5dfe7;border-radius:25px;padding:11px}.input button{width:45px;margin-left:7px;border:0;border-radius:50%;background:#173b5b;color:#fff}
+@media(max-width:900px){.navlinks{display:none}.hero-content{width:67%}.art{opacity:.6}.grid4{grid-template-columns:repeat(2,1fr)}.tools{grid-template-columns:repeat(3,1fr)}.highlights{grid-template-columns:repeat(2,1fr)}.tip{grid-template-columns:1fr}}
+@media(max-width:600px){.nav{padding:10px 14px}.brand small{display:none}.hero{padding:0 12px}.hero-box{min-height:470px}.hero-content{width:100%;padding:35px 23px}.hero h1{font-size:40px}.hero h2{font-size:17px}.art{width:100%;height:48%;opacity:.42}.person{right:34%;transform:scale(.75);transform-origin:bottom}.main{padding:0 12px 35px}.needs{margin-top:-18px;padding:16px}.grid4{grid-template-columns:1fr 1fr}.need{min-height:145px;padding:14px 11px}.need h3{font-size:13px}.tools{grid-template-columns:1fr 1fr}.highlights{grid-template-columns:1fr 1fr}.chat{left:8px;right:8px;bottom:8px;width:auto;height:calc(100vh - 16px)}.moods{grid-template-columns:repeat(2,1fr)}.modal-box{padding:20px}.foot{flex-direction:column}}
+</style>
+</head>
+<body>
+
+<header class="top"><div class="nav">
+<div class="brand"><div class="logo">🌿</div><div><b>Munshi's Inspire Space</b><small>Unit Bimbingan & Kaunseling · SMK Munshi Sulaiman</small></div></div>
+<div class="navlinks"><button onclick="topPage()">Utama</button><button onclick="openModal('mood')">Kenali Diri</button><button onclick="document.getElementById('tools').scrollIntoView({behavior:'smooth'})">Minda Sihat</button><button onclick="openModal('activity')">Aktiviti</button><button onclick="openChat()">MindaBOT</button></div>
+<button class="chat-nav" onclick="openChat()">💬 Chat</button>
+</div></header>
+
+<section class="hero"><div class="hero-box">
+<div class="art"><div class="sun"></div><div class="school"></div><div class="person"></div></div>
+<div class="hero-content"><div class="kicker">UNIT BIMBINGAN & KAUNSELING</div><h1>Munshi's<br>Inspire Space</h1><h2>Ruang Untuk Diri, Emosi & Inspirasi</h2><p>“Anda tidak perlu menghadapi semuanya seorang diri.”</p><button class="primary" onclick="openModal('mood')">Mulakan Sekarang →</button></div>
+</div></section>
+
+<main class="main">
+<section class="needs"><h2 class="title">Apa yang awak perlukan hari ini?</h2><div class="grid4">
+<button class="need pink" onclick="openRisk()"><div><div class="emoji">🧠</div><h3>Semakan Tahap Risiko</h3><small>Semak melalui Minda Sihat</small></div><span class="arrow">→</span></button>
+<button class="need green" onclick="openModal('tool')"><div><div class="emoji">🌿</div><h3>Saya nak tenangkan diri</h3><small>Toolkit Tenangkan Diri</small></div><span class="arrow">→</span></button>
+<button class="need purple" onclick="openChat()"><div><div class="emoji">💬</div><h3>Saya nak bercakap</h3><small>Munshi's MindaBOT</small></div><span class="arrow">→</span></button>
+<button class="need yellow" onclick="openCounsellor()"><div><div class="emoji">📝</div><h3>Saya perlukan bantuan</h3><small>Hubungi Kaunselor</small></div><span class="arrow">→</span></button>
+</div></section>
+
+<section id="tools"><div class="tools">
+<button class="tool" onclick="openModal('mood')"><div class="i">🌈</div><b>Mood Check-In</b><span>Kenali emosi</span></button>
+<button class="tool" onclick="openModal('mood')"><div class="i">🧠</div><b>Kenali Diri</b><span>Refleksi kendiri</span></button>
+<button class="tool" onclick="openModal('tool')"><div class="i">🧘</div><b>Tenangkan Diri</b><span>Teknik mudah</span></button>
+<button class="tool" onclick="openModal('activity')"><div class="i">📚</div><b>Bahan & Aktiviti</b><span>Buku & permainan</span></button>
+<button class="tool" onclick="openCounsellor()"><div class="i">🧑‍💼</div><b>Hubungi Kaunselor</b><span>Hantar borang</span></button>
+</div></section>
+
+<section class="tip"><div class="tip1"><h2>💡 Minda Tip Hari Ini</h2><p id="tipText"></p></div><div class="tip2"><p>“Minda yang sihat membantu kita belajar, berkembang dan menghadapi cabaran dengan lebih baik.” 🌱</p></div></section>
+
+<h2 class="section">Sorotan / Terkini</h2><section class="highlights">
+<div class="card"><div class="pic">📓</div><div class="body"><b>Jom Kenali Diri</b><small>Aktiviti refleksi yang ringkas</small><button class="link" onclick="openModal('mood')">Teroka →</button></div></div>
+<div class="card"><div class="pic">🧩</div><div class="body"><b>Puzzle & Permainan</b><small>Aktiviti santai untuk minda</small><button class="link" onclick="openModal('activity')">Lihat →</button></div></div>
+<div class="card"><div class="pic">🌬️</div><div class="body"><b>Teknik Relaksasi</b><small>Cuba teknik untuk bertenang</small><button class="link" onclick="openModal('tool')">Cuba →</button></div></div>
+<div class="card"><div class="pic">💛</div><div class="body"><b>Kata Inspirasi</b><small>Semangat untuk hari ini</small><button class="link" onclick="openModal('activity')">Lihat →</button></div></div>
+</section>
+</main>
+
+<footer><div class="foot"><div><b>🌿 UNIT BIMBINGAN & KAUNSELING</b><br><small>SMK Munshi Sulaiman · “Minda Sihat, Generasi Hebat”</small></div><div>🎵　📷　▶️</div></div></footer>
+
+<button class="chat-launch" onclick="openChat()">💬</button>
+<div id="chatbox" class="chat"><div class="chathead"><div><b>🌿 Munshi's MindaBOT</b><br><small>Ruang selamat untuk berbual</small></div><button onclick="closeChat()">×</button></div><div id="messages" class="messages"><div class="bot">Hai! 🌿 Saya MindaBOT.<br><br>Apa yang anda rasa atau ingin ceritakan hari ini?</div></div><div class="quick"><button onclick="quick('Saya okay')">😊 Saya okay</button><button onclick="quick('Saya rasa stres')">😟 Stres</button><button onclick="quick('Saya rasa sedih')">😔 Sedih</button><button onclick="quick('Saya rasa risau')">😰 Risau</button><button onclick="quick('Tekanan pelajaran')">📚 Pelajaran</button><button onclick="quick('Masalah kawan')">👥 Kawan</button><button onclick="quick('Nak luahkan')">💬 Luahkan</button><button onclick="quick('Perlukan bantuan')">🆘 Bantuan</button></div><div class="input"><input id="msg" placeholder="Taip mesej di sini..." onkeydown="if(event.key==='Enter')send()"><button onclick="send()">➤</button></div></div>
+
+<div id="mood" class="modal" onclick="outside(event,'mood')"><div class="modal-box"><div class="mh"><h2>🌈 Mood Check-In</h2><button class="close" onclick="closeModal('mood')">×</button></div><p>Bagaimana perasaan awak hari ini?</p><div class="moods">
+<button class="mood" onclick="mood('😊','Gembira','Bagus! Nikmati perkara yang membuat awak rasa gembira dan teruskan menjaga diri.')"><span>😊</span>Gembira</button>
+<button class="mood" onclick="mood('😐','Biasa','Perasaan biasa juga okay. Cuba perhatikan apa yang awak perlukan hari ini.')"><span>😐</span>Biasa</button>
+<button class="mood" onclick="mood('😔','Sedih','Tak mengapa untuk rasa sedih. Beri diri ruang dan bercakap dengan seseorang yang dipercayai.')"><span>😔</span>Sedih</button>
+<button class="mood" onclick="mood('😰','Risau','Cuba tarik nafas perlahan-lahan dan fokus pada perkara yang boleh awak kawal sekarang.')"><span>😰</span>Risau</button>
+<button class="mood" onclick="mood('😡','Marah','Beri diri ruang untuk bertenang sebelum bertindak. Cuba pernafasan perlahan.')"><span>😡</span>Marah</button>
+<button class="mood" onclick="mood('😴','Penat','Berehat juga penting. Beri tubuh dan minda masa untuk pulih.')"><span>😴</span>Penat</button>
+</div><div id="moodResult" class="result"></div><p style="font-size:12px;color:#718196">Mood Check-In ialah ruang refleksi kendiri dan bukan diagnosis.</p></div></div>
+
+<div id="tool" class="modal" onclick="outside(event,'tool')"><div class="modal-box"><div class="mh"><h2>🧘 Toolkit Tenangkan Diri</h2><button class="close" onclick="closeModal('tool')">×</button></div><p>Pilih satu teknik yang sesuai untuk awak.</p><div class="items">
+<div class="item"><h3>🌬️ Pernafasan 4-4</h3><p>Tarik nafas 4 saat dan hembus 4 saat.</p><button class="primary" onclick="toggle('breath')">Mulakan</button><div id="breath" class="sub"><div class="circle">Tarik<br>4 saat</div><p style="text-align:center">Ulang beberapa kali secara perlahan.</p></div></div>
+<div class="item"><h3>🖐️ Grounding 5-4-3-2-1</h3><p>Fokus pada apa yang berada di sekeliling awak.</p><button class="primary" onclick="toggle('ground')">Buka</button><div id="ground" class="sub">👀 5 perkara yang dilihat<br>✋ 4 perkara yang disentuh<br>👂 3 bunyi yang didengar<br>👃 2 bau yang dihidu<br>👅 1 perkara yang dirasa</div></div>
+<div class="item"><h3>💭 Kenali Emosi Saya</h3><p>Tanya diri: Apa yang saya rasa? Apa puncanya? Apa yang saya perlukan?</p><button class="primary" onclick="toggle('emotion')">Refleksi</button><div id="emotion" class="sub">Luangkan satu minit untuk mengenal pasti emosi dan keperluan diri.</div></div>
+<div class="item"><h3>📝 Jurnal Ringkas</h3><p>Tulis apa yang bermain dalam fikiran.</p><button class="primary" onclick="toggle('journal')">Buka</button><div id="journal" class="sub"><textarea style="width:100%;min-height:110px;border:1px solid #d6dfe7;border-radius:12px;padding:10px" placeholder="Tulis di sini..."></textarea></div></div>
+</div></div></div>
+
+<div id="activity" class="modal" onclick="outside(event,'activity')"><div class="modal-box"><div class="mh"><h2>📚 Bahan & Aktiviti Minda Sihat</h2><button class="close" onclick="closeModal('activity')">×</button></div><div class="items">
+<div class="item"><h3>📖 Buku & Bacaan</h3><p>Bahan bacaan motivasi, pembangunan diri dan bacaan santai.</p></div>
+<div class="item"><h3>🧩 Puzzle & Permainan Minda</h3><p>Teka silang kata, word search, sudoku dan permainan logik.</p></div>
+<div class="item"><h3>🎨 Aktiviti Kreatif</h3><p>Mewarna, melukis dan menghasilkan karya sendiri.</p></div>
+<div class="item"><h3>📝 Jurnal Emosi</h3><p>Catat perasaan dan perkara yang membantu awak rasa lebih baik.</p></div>
+</div></div></div>
+
+<script>
+const RISK="https://datastudio.google.com/reporting/9e4fdf2d-97f3-482e-8066-1641b4052d05";
+const FORM="https://forms.gle/mX4DCt5bzRCWeKm98";
+const tips=["“Tak semua perkara perlu diselesaikan hari ini. Kadang-kadang, berehat juga satu bentuk penjagaan diri.”","“Langkah kecil tetap merupakan langkah ke hadapan.”","“Perasaan datang dan pergi. Beri diri ruang untuk merasainya.”"];
+document.getElementById("tipText").textContent=tips[Math.floor(Math.random()*tips.length)];
+function topPage(){scrollTo({top:0,behavior:"smooth"})}
+function openRisk(){window.open(RISK,"_blank")}
+function openCounsellor(){window.open(FORM,"_blank")}
+function openModal(id){document.getElementById(id).style.display="flex";document.body.style.overflow="hidden"}
+function closeModal(id){document.getElementById(id).style.display="none";document.body.style.overflow=""}
+function outside(e,id){if(e.target.id===id)closeModal(id)}
+function toggle(id){const e=document.getElementById(id);e.style.display=e.style.display==="block"?"none":"block"}
+function mood(icon,name,text){const r=document.getElementById("moodResult");r.style.display="block";r.innerHTML="<b>"+icon+" "+name+"</b><br>"+text+"<br><br><button class='primary' onclick='openCounsellor()'>Perlukan bantuan? Hubungi kaunselor →</button>"}
+function openChat(){document.getElementById("chatbox").style.display="flex"}
+function closeChat(){document.getElementById("chatbox").style.display="none"}
+function quick(t){document.getElementById("msg").value=t;send()}
+function addMessage(text,type){const d=document.createElement("div");d.className=type;d.textContent=text;const box=document.getElementById("messages");box.appendChild(d);box.scrollTop=box.scrollHeight}
+function send(){const i=document.getElementById("msg"),t=i.value.trim();if(!t)return;addMessage(t,"user");i.value="";setTimeout(()=>addMessage(reply(t),"bot"),300)}
+function reply(t){const x=t.toLowerCase();
+if(/bunuh diri|nak mati|mahu mati|cederakan diri|cidera diri|sakiti diri|self.?harm/.test(x))return"Terima kasih kerana berani berkongsi. Anda tidak perlu menghadapi keadaan ini seorang diri. Jika anda berada dalam bahaya atau rasa mungkin mencederakan diri, segera beritahu guru, ibu bapa, penjaga atau orang dewasa yang dipercayai dan dapatkan bantuan segera. Sila juga berjumpa dengan Guru Bimbingan dan Kaunseling.";
+if(/okay|okey|baik/.test(x))return"Bagus 😊 Teruskan menjaga diri dan nikmati perkara kecil yang membuat anda rasa baik.";
+if(/stres|stress|tertekan/.test(x))return"Cuba berhenti seketika, tarik nafas perlahan dan pecahkan tugasan kepada langkah kecil. Jika stres berterusan, berbincang dengan Guru Bimbingan dan Kaunseling.";
+if(/sedih|menangis|murung/.test(x))return"Tak mengapa untuk rasa sedih. Beri diri ruang dan bercakap dengan seseorang yang dipercayai. Anda tidak perlu simpan semuanya seorang diri.";
+if(/marah|geram/.test(x))return"Beri diri sedikit masa sebelum bertindak. Tarik nafas dan jauhkan diri seketika daripada situasi.";
+if(/risau|cemas|takut|bimbang/.test(x))return"Cuba teknik 4-4: tarik nafas 4 saat dan hembus 4 saat. Fokus pada perkara yang boleh anda kawal sekarang.";
+if(/penat|letih/.test(x))return"Berehat juga penting. Cuba beri diri masa untuk tidur dan lakukan satu perkara pada satu masa.";
+if(/pelajaran|kerja sekolah|belajar/.test(x))return"Senaraikan tugasan dan pilih satu yang paling penting dahulu. Buat sedikit demi sedikit dan rehat secara berkala.";
+if(/peperiksaan|exam|ujian/.test(x))return"Buat jadual ulang kaji yang realistik, gunakan latihan soalan dan jangan abaikan tidur.";
+if(/kawan|buli|dibuli/.test(x))return"Masalah dengan kawan boleh terasa berat. Jika berkaitan buli, beritahu guru atau kaunselor yang dipercayai.";
+if(/rumah|keluarga|ibu|ayah|mak|bapa/.test(x))return"Masalah di rumah boleh memberi kesan kepada emosi. Pilih orang dewasa yang dipercayai untuk berkongsi.";
+if(/kecewa|gagal/.test(x))return"Satu kesilapan tidak menentukan nilai diri awak. Cuba lihat apa yang boleh dipelajari dan ambil satu langkah kecil seterusnya.";
+if(/luahkan|cerita|nak cakap/.test(x))return"Boleh. Saya dengar. Ceritakan apa yang sedang bermain dalam fikiran awak.";
+if(/tenang|relaks/.test(x))return"Cuba pernafasan 4-4 atau grounding 5-4-3-2-1 melalui Toolkit Tenangkan Diri.";
+if(/bantuan|kaunselor/.test(x))return"Anda boleh mendapatkan sokongan Guru Bimbingan dan Kaunseling melalui borang Hubungi Kaunselor.";
+return"Terima kasih kerana berkongsi 🌿 Saya mungkin tidak memahami sepenuhnya keadaan awak melalui mesej sahaja. Jika perkara ini mengganggu awak, pertimbangkan untuk bercakap dengan Guru Bimbingan dan Kaunseling."}
+</script>
+</body>
+</html>
